@@ -40,7 +40,18 @@ def count_elements(array)
   }
 end
 
-
+def merge_data (arr1, arr2)
+  new_arr = []
+  arr1.each { |hash1|
+    name = hash1[:first_name]
+    arr2.each { |hash2|
+      attributes = hash2[name]
+      attributes[:first_name] = name
+      new_arr << attributes
+    }
+  }
+  new_arr
+end
 
 def find_cool(array)
   new_arr = []
@@ -65,15 +76,4 @@ def organize_schools(schools)
   new_hash
 end
 
-def merge_data (arr1, arr2)
-  new_arr = []
-  arr1.each { |hash1|
-    name = hash1[:first_name]
-    arr2.each { |hash2|
-      attributes = hash2[name]
-      attributes[:first_name] = name
-      new_arr << attributes
-    }
-  }
-  new_arr
-end
+
